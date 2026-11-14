@@ -3601,5 +3601,10 @@
  "statVulnerable": "Ziel nimmt mehr Schaden",
  "wingmanAmmo": "{0}: Munitionsnachschub",
  "wingmanCharged": "{0}: Geladene Schüsse",
- "wingmanRepair": "{0}: Hüllenreparatur"
+ "wingmanRepair": "{0}: Hüllenreparatur",
+ "scavengerName": "Sammler",
+ "scavengerDescription": "Berge Ausrüstung aus Schiffsladungen. Stelle Feuerwerkskörper her, um die Medaille „Champion“ zu erhalten.",
+ "scavengerChampion": "Stelle eine Ladung Feuerwerkskörper her.",
+ "saveMode": "Spielstandgruppe",
+ "standardMode": "Normales Spiel"
 }

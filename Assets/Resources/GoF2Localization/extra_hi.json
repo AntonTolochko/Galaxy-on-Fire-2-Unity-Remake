@@ -3601,5 +3601,10 @@
  "statVulnerable": "लक्ष्य को ज़्यादा नुकसान होता है",
  "wingmanAmmo": "{0}: गोला-बारूद आपूर्ति",
  "wingmanCharged": "{0}: चार्ज्ड शॉट",
- "wingmanRepair": "{0}: हल मरम्मत"
+ "wingmanRepair": "{0}: हल मरम्मत",
+ "scavengerName": "संग्राहक",
+ "scavengerDescription": "जहाज़ों के माल से उपकरण जुटाएँ। «चैंपियन» पदक पाने के लिए आतिशबाज़ी बनाएँ।",
+ "scavengerChampion": "आतिशबाज़ी का एक बैच बनाएँ।",
+ "saveMode": "सेव समूह",
+ "standardMode": "सामान्य खेल"
 }

@@ -3601,5 +3601,10 @@
  "statVulnerable": "Il bersaglio subisce più danni",
  "wingmanAmmo": "{0}: Rifornimento munizioni",
  "wingmanCharged": "{0}: Colpi caricati",
- "wingmanRepair": "{0}: Riparazione scafo"
+ "wingmanRepair": "{0}: Riparazione scafo",
+ "scavengerName": "Recuperatore",
+ "scavengerDescription": "Recupera equipaggiamento dal carico delle navi. Produci fuochi d’artificio per ottenere la medaglia «Campione».",
+ "scavengerChampion": "Produci un lotto di fuochi d’artificio.",
+ "saveMode": "Gruppo di salvataggi",
+ "standardMode": "Partita normale"
 }

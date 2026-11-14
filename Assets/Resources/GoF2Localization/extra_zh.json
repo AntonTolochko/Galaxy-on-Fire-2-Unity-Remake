@@ -3601,5 +3601,10 @@
  "statVulnerable": "目标受到更多伤害",
  "wingmanAmmo": "{0}：弹药补给",
  "wingmanCharged": "{0}：蓄能射击",
- "wingmanRepair": "{0}：船体修理"
+ "wingmanRepair": "{0}：船体修理",
+ "scavengerName": "拾荒者",
+ "scavengerDescription": "从飞船货物中回收装备。制造烟花，赢得“胜利者”勋章。",
+ "scavengerChampion": "制造一批烟花。",
+ "saveMode": "存档分组",
+ "standardMode": "普通游戏"
 }

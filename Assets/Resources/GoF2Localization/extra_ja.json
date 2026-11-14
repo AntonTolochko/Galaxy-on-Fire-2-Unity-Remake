@@ -3601,5 +3601,10 @@
  "statVulnerable": "ターゲットの被ダメージ増加",
  "wingmanAmmo": "{0}：弾薬補給",
  "wingmanCharged": "{0}：チャージショット",
- "wingmanRepair": "{0}：船体修理"
+ "wingmanRepair": "{0}：船体修理",
+ "scavengerName": "回収者",
+ "scavengerDescription": "船の積荷から装備を回収しよう。花火を製造して「チャンピオン」メダルを獲得しよう。",
+ "scavengerChampion": "花火を1ロット製造する。",
+ "saveMode": "セーブデータのグループ",
+ "standardMode": "通常のゲーム"
 }

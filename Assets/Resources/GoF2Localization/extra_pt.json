@@ -3601,5 +3601,10 @@
  "statVulnerable": "O alvo sofre mais dano",
  "wingmanAmmo": "{0}: Suprimento de munição",
  "wingmanCharged": "{0}: Tiros carregados",
- "wingmanRepair": "{0}: Reparo do casco"
+ "wingmanRepair": "{0}: Reparo do casco",
+ "scavengerName": "Coletor",
+ "scavengerDescription": "Recupere equipamentos das cargas das naves. Fabrique fogos de artifício para ganhar a medalha «Campeão».",
+ "scavengerChampion": "Fabrique um lote de fogos de artifício.",
+ "saveMode": "Grupo de jogos salvos",
+ "standardMode": "Jogo normal"
 }

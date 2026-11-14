@@ -3601,5 +3601,10 @@
  "statVulnerable": "El objetivo recibe más daño",
  "wingmanAmmo": "{0}: Suministro de munición",
  "wingmanCharged": "{0}: Disparos cargados",
- "wingmanRepair": "{0}: Reparación del casco"
+ "wingmanRepair": "{0}: Reparación del casco",
+ "scavengerName": "Recolector",
+ "scavengerDescription": "Recupera equipo de la carga de las naves. Fabrica fuegos artificiales para obtener la medalla «Campeón».",
+ "scavengerChampion": "Fabrica un lote de fuegos artificiales.",
+ "saveMode": "Grupo de partidas guardadas",
+ "standardMode": "Partida normal"
 }

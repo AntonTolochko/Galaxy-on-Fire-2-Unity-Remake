@@ -3601,5 +3601,10 @@
  "statVulnerable": "La cible subit plus de dégâts",
  "wingmanAmmo": "{0} : Ravitaillement en munitions",
  "wingmanCharged": "{0} : Tirs chargés",
- "wingmanRepair": "{0} : Réparation de coque"
+ "wingmanRepair": "{0} : Réparation de coque",
+ "scavengerName": "Récupérateur",
+ "scavengerDescription": "Récupérez de l’équipement dans les cargaisons des vaisseaux. Fabriquez des feux d’artifice pour obtenir la médaille « Champion ».",
+ "scavengerChampion": "Fabriquez un lot de feux d’artifice.",
+ "saveMode": "Groupe de sauvegardes",
+ "standardMode": "Partie normale"
 }

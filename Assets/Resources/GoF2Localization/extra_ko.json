@@ -3601,5 +3601,10 @@
  "statVulnerable": "목표가 받는 피해 증가",
  "wingmanAmmo": "{0}: 탄약 보급",
  "wingmanCharged": "{0}: 충전 사격",
- "wingmanRepair": "{0}: 선체 수리"
+ "wingmanRepair": "{0}: 선체 수리",
+ "scavengerName": "수집가",
+ "scavengerDescription": "함선의 화물에서 장비를 회수하세요. 불꽃놀이를 제작하여 «챔피온» 메달을 획득하세요.",
+ "scavengerChampion": "불꽃놀이를 한 묶음 제작하세요.",
+ "saveMode": "저장 그룹",
+ "standardMode": "일반 게임"
 }

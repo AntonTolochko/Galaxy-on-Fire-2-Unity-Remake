@@ -3601,5 +3601,10 @@
  "statVulnerable": "الهدف يتلقى ضررًا أكبر",
  "wingmanAmmo": "{0}: إمداد الذخيرة",
  "wingmanCharged": "{0}: طلقات مشحونة",
- "wingmanRepair": "{0}: إصلاح الهيكل"
+ "wingmanRepair": "{0}: إصلاح الهيكل",
+ "scavengerName": "جامع الغنائم",
+ "scavengerDescription": "اجمع المعدات من حمولات السفن. اصنع الألعاب النارية لتحصل على ميدالية «بطل».",
+ "scavengerChampion": "اصنع دفعة من الألعاب النارية.",
+ "saveMode": "مجموعة ملفات الحفظ",
+ "standardMode": "اللعبة العادية"
 }

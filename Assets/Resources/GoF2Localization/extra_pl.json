@@ -3601,5 +3601,10 @@
  "statVulnerable": "Cel otrzymuje więcej obrażeń",
  "wingmanAmmo": "{0}: Zaopatrzenie w amunicję",
  "wingmanCharged": "{0}: Naładowane strzały",
- "wingmanRepair": "{0}: Naprawa kadłuba"
+ "wingmanRepair": "{0}: Naprawa kadłuba",
+ "scavengerName": "Zbieracz",
+ "scavengerDescription": "Odzyskuj wyposażenie z ładunków statków. Wyprodukuj fajerwerki, aby zdobyć medal „Czempion”.",
+ "scavengerChampion": "Wyprodukuj partię fajerwerków.",
+ "saveMode": "Grupa zapisów",
+ "standardMode": "Zwykła gra"
 }

@@ -88,3 +88,12 @@ and verify Champion once; then start/load an ordinary campaign and verify its re
 At implementation time this environment had no Unity executable, so the Unity test runner and build could not run.
 C# syntax parsing, changed JSON validation and `git diff --check` were run separately; they are not compilation or
 an in-game acceptance test. A Unity pass is required before proposing this for upstream merge.
+
+## Localization
+
+The mode adds five UI strings: its name, its description, the Champion requirement, the save-group label and the
+Standard-game label. All 14 offered languages are covered: English uses the existing code fallback; Arabic, German,
+Spanish, French, Hindi, Italian, Japanese, Korean, Dutch, Polish, Brazilian Portuguese, Russian and Simplified Chinese
+use the existing extra-language tables. Medal names in the descriptions match the original language tables. Item names,
+recipe ingredients and the remaining controls reuse existing translations. Documentation and source comments remain
+in English. Translations have not yet received native-speaker or in-game layout review.
