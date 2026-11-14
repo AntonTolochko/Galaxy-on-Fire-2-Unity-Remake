@@ -95,6 +95,7 @@ namespace GoF2Remake.UI
             // Remake: the chosen save folder's newer saves in first (SaveFolder; a no-op without one), then Resume's test.
             OptionsCatalog.SaveFolderPressed = ChooseSaveFolder;
             SyncSaveFolder(true);
+            SaveGame.SelectMostRecentGroup();
             resumeButton.EnableInClassList("menu-button--gone", SaveGame.MostRecentSlot() < 0);   // only with a save
             UpdateColumnFit();
             WatchMenuNumbers();

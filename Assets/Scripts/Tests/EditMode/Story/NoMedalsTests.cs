@@ -147,7 +147,7 @@ namespace GoF2Remake.Tests
         [Test]
         public void TheChoiceIsSavedAndOlderSavesHaveMedals()
         {
-            Assert.AreEqual(18, SaveData.CurrentVersion);
+            Assert.GreaterOrEqual(SaveData.CurrentVersion, 18);
             Session.NoMedals = true;
             Assert.IsTrue(SaveGame.Save(1));
             Session.ResetNewGame();

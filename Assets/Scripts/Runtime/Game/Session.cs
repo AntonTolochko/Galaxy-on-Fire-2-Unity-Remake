@@ -9,6 +9,8 @@ using UnityEngine;
 
 namespace GoF2Remake.Data
 {
+    public enum GameMode { Standard, Scavenger }
+
     public enum Campaign { GalaxyOnFire2, Valkyrie, Supernova }
 
     /// <summary>The item and ship tables a game uses (Database.Load): Android = the Android OBB's (the remake's data files),
@@ -263,6 +265,7 @@ namespace GoF2Remake.Data
         /// none are awarded or shown (Achievements.Enabled), and what they unlock comes from the story instead
         /// (Achievements.VoidXUnlocked / SupernovaUnlocked). Saved; older saves have medals.</summary>
         public static bool NoMedals;
+        public static GameMode Mode;
         /// <summary>Remake: the Space Waste tons the Mining Plant has sorted in this game (WasteProcessing: the next ton's
         /// roll), the empty ones in a row since the last find and the tons since the last rare find (its bad-luck caps;
         /// all saved).</summary>
@@ -558,6 +561,8 @@ namespace GoF2Remake.Data
 
         public static void ResetNewGame()
         {
+            Mode = GameMode.Standard;
+            SaveGame.SelectedMode = GameMode.Standard;
             PlaySeconds = 0f;
             StationIndex = 78;
             PreviousStationIndex = -1;

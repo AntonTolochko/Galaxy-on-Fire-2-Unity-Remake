@@ -655,7 +655,7 @@ namespace GoF2Remake.UI
             if (dialog.ClassListContains("dialog-backdrop--shown")) { var no = dialogNo; CloseDialog(); no?.Invoke(); return; }
             if (openPanel == null) return;
             Play(buttonRelease);
-            if (openPanel == panels["gameOptionsPanel"]) { OpenPanel("economyPanel"); return; }
+            if (openPanel == panels["gameOptionsPanel"]) { OpenPanel(scavengerNext ? "difficultyPanel" : "economyPanel"); return; }
             if (openPanel == panels["economyPanel"]) { OpenPanel("difficultyPanel"); return; }
             if (openPanel == panels["difficultyPanel"]) { OpenPanel(pendingStartIndex >= 0 && panels.ContainsKey("debugPanel") ? "debugPanel" : "campaignPanel"); return; }
             if (coopSlotPick && openPanel == panels["loadPanel"]) { CloseCoopSlots(); return; }   // the co-op save picker: the co-op screen

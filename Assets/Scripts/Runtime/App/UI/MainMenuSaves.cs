@@ -40,6 +40,25 @@ namespace GoF2Remake.UI
         {
             var list = root.Q<ScrollView>("slotList");
             list.Clear();
+            var modeButton = root.Q<Button>("saveModeButton");
+            if (modeButton == null)
+            {
+                modeButton = new Button(() =>
+                {
+                    SaveGame.SelectedMode = SaveGame.SelectedMode == GameMode.Standard ? GameMode.Scavenger : GameMode.Standard;
+                    BuildSlots();
+                    ApplyLoadPanelMode();
+                    resumeButton.EnableInClassList("menu-button--gone", SaveGame.MostRecentSlot() < 0);
+                    UpdateColumnFit();
+                }) { name = "saveModeButton" };
+                modeButton.AddToClassList("choice-button");
+                list.parent.Insert(list.parent.IndexOf(list), modeButton);
+                HookFocusSound(modeButton);
+            }
+            if (coopSlotPick) SaveGame.SelectedMode = GameMode.Standard;
+            modeButton.style.display = coopSlotPick ? DisplayStyle.None : DisplayStyle.Flex;
+            modeButton.text = Localization.Extra("saveMode", "Save group") + ": " +
+                (SaveGame.SelectedMode == GameMode.Scavenger ? ScavengerMode.Name : Localization.Extra("standardMode", "Standard"));
             var db = Database.Load();
             for (int i = 0; i < SaveGame.SlotCount; i++)
             {
@@ -71,10 +90,10 @@ namespace GoF2Remake.UI
         {
             if (root == null) return;
             if (root.Q<Label>("loadTitle") is Label title)
-                title.text = (coopSlotPick ? Localization.Extra("coopPickTitle", "Host a save") : Localization.Get(29)).UiCaps();
+                title.text = (coopSlotPick ? Localization.Extra("coopPickTitle", "Host a save") : Localization.Get(29) + (SaveGame.SelectedMode == GameMode.Scavenger ? " · " + ScavengerMode.Name : "")).UiCaps();
             void Show(string name, bool on) { if (root.Q(name) is VisualElement e) e.style.display = on ? DisplayStyle.Flex : DisplayStyle.None; }
             Show("saveTransferRow", !coopSlotPick);
-            Show("originalSaveRow", !coopSlotPick && Modding.ModImport.Available);
+            Show("originalSaveRow", !coopSlotPick && SaveGame.SelectedMode == GameMode.Standard && Modding.ModImport.Available);
             Show("saveTransferNote", !coopSlotPick && !SaveTransfer.HasFileDialog && !SavesPicker);
         }
 
