@@ -3250,7 +3250,7 @@
  "kaamoVipCard": "Kopen bij de club",
  "kaamoVipAlways": "Altijd aan",
  "kaamoVipOff": "Uit",
- "kaamoVipOptionHelp": "De VIP-kaart geeft de opslag van de Kaamo Club een zoekveld en sorteren, een Schepen-tab voor je opgeslagen schepen en een Kaamo-markering op schepen die je daar al hebt. Kopen bij de club: de kaart ligt in de Opslag-tab. Altijd aan: geen kaart nodig. Uit: de originele club.",
+  "kaamoVipOptionHelp": "De VIP-kaart geeft 20% korting op scheepsupgrades bij Kaamo-monteurs. Schepen en uitrusting zijn uitgesloten. Kopen in de club: 1.000.000 credits. Altijd aan: geen kaart nodig. Uit: geen korting. Opslaghulpmiddelen hebben een aparte interfaceoptie.",
  "shopByCategory": "Winkel op categorie sorteren",
  "shopByCategoryHelp": "De winkel en de opslag tonen voorwerpen op categorie en daarna op techniekniveau, zodat extra uitrusting naast haar soortgenoten staat. Uit: op voorwerpnummer, zoals in het origineel.",
  "shopSearch": "Zoeken",
@@ -3262,10 +3262,10 @@
  "shopSortType": "Type",
  "shopSearchNone": "Niets gevonden voor \"{0}\".",
  "kaamoNoShips": "Nog geen schepen opgeslagen. Houd je oude schip als je een nieuw koopt, dan wordt het hier geparkeerd.",
- "kaamoVipText": "Word VIP-lid van de hipste club van het universum. Je kaart breidt de opslag van de Kaamo Club uit:\n\n• een zoekveld en sorteren op naam, waarde en ras of type\n• je opgeslagen schepen in een eigen Schepen-tab\n• een Kaamo-markering op elk schip te koop dat je hier al hebt",
- "kaamoVipRow": "Zoeken, sorteren en een Schepen-tab voor je club",
+  "kaamoVipText": "De VIP-kaart geeft 20% korting op scheepsupgrades bij Kaamo-monteurs. Schepen en uitrusting zijn uitgesloten. Gratis zoeken, sorteren, een tabblad Schepen en markeringen van gestalde schepen voor Kaamo-eigenaren, zonder VIP-kaart.",
+  "kaamoVipRow": "20% korting op scheepsupgrades bij Kaamo",
  "kaamoVipConfirm": "De Kaamo Club VIP-kaart kopen voor {0}?",
- "kaamoVipBought": "Welkom in de club, VIP! Je opslag heeft nu een zoekveld, sorteren en een Schepen-tab, en schepen die je hier al hebt zijn gemarkeerd overal waar ze te koop zijn.",
+  "kaamoVipBought": "Welkom bij de VIP-club! Je krijgt nu 20% korting op scheepsupgrades bij Kaamo-monteurs. Schepen en uitrusting zijn uitgesloten.",
  "shopAtKaamo": "IN KAAMO",
  "loungeShipAtKaamo": "(Je hebt al een {0} in de Kaamo Club.)",
  "hudSearch": "ZOEKEN",
@@ -3640,5 +3640,8 @@
  "mpScriptsNotAllowed": "Dit spel gebruikt scriptmods die je niet hebt toegestaan: {0}. Zet ze één keer aan onder Mods om hun scripts toe te staan en doe dan opnieuw mee.",
  "mpScriptsShort": "sta eerst de scripts toe: {0}",
  "mpModsCountScripts": "Mods ({0} aan, met scripts)",
- "scriptNoCommand": "Geen opdracht \"{0}\"."
+ "scriptNoCommand": "Geen opdracht \"{0}\".",
+  "kaamoSpecialUiFeatures": "Speciale Kaamo-interfacefuncties",
+  "kaamoSpecialUiFeaturesHelp": "Gratis zoeken, sorteren, een tabblad Schepen en markeringen van gestalde schepen voor Kaamo-eigenaren, zonder VIP-kaart.",
+  "kaamoVipUpgradePrice": "Normale prijs: {0}. VIP-korting: 20% ({1}). Te betalen: {2}."
 }

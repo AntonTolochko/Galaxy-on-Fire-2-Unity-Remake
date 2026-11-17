@@ -575,5 +575,59 @@ namespace GoF2Remake.Tests
             Assert.AreEqual(2, Settings.CurrentScopedExperience(cosmetics), "explicit Custom preserves values but changes mode");
         }
 
+        public void KaamoUiDefaultsOnAndResetsOnlyWithCosmetics()
+        {
+            Settings.Reset(new[] { "kaamoSpecialUiFeatures" });
+            var row = OptionsCatalog.All().Single(o => o.id == "kaamoSpecialUiFeatures");
+            Assert.AreEqual("Kaamo special UI features", row.label());
+            Assert.AreEqual(OptionPage.Cosmetics, row.page);
+            Assert.AreEqual(OptionSection.Interface, row.section);
+            Assert.IsTrue(row.getBool());
+            row.setBool(false);
+            Settings.Reset(Settings.GameplayKeys);
+            Assert.IsFalse(row.getBool());
+            Settings.Reset(Settings.CosmeticsKeys);
+            Assert.IsTrue(row.getBool());
+            Assert.AreEqual(OptionSection.GameRules, OptionsCatalog.All().Single(o => o.id == "kaamoVip").section);
+        }
+
+        [Test]
+        public void GameplayPresetsOptIntoVipOnlyForRemake()
+        {
+            var gameplay = OptionsCatalog.All().Single(o => o.id == "gameplayExperience");
+            gameplay.setIndex(1);
+            Assert.AreEqual(Settings.KaamoVipCard, Settings.KaamoVipMode);
+            bool pirates = Settings.PirateEvents;
+            gameplay.setIndex(2);
+            Assert.AreEqual(Settings.KaamoVipCard, Settings.KaamoVipMode, "Custom preserves VIP too");
+            Assert.AreEqual(pirates, Settings.PirateEvents, "Custom preserves other rules");
+            gameplay.setIndex(0);
+            Assert.AreEqual(Settings.KaamoVipOff, Settings.KaamoVipMode);
+        }
+
+        [Test]
+        public void CosmeticPresetsControlKaamoToolsWithoutChangingVipOrInterfaceStyle()
+        {
+            Settings.KaamoVipMode = Settings.KaamoVipAlways;
+            Settings.OriginalUi = true;
+            Settings.ApplyScopedExperience(true, 0);
+            Assert.IsFalse(Settings.KaamoSpecialUiFeatures);
+            Assert.AreEqual(0, Settings.CurrentScopedExperience(true));
+            Assert.IsTrue(Settings.OriginalUi, "legacy style is still a separate manual choice");
+            Assert.AreEqual(Settings.KaamoVipAlways, Settings.KaamoVipMode, "cosmetics cannot change paid benefits");
+            Settings.KaamoSpecialUiFeatures = true;
+            Assert.AreEqual(2, Settings.CurrentScopedExperience(true), "an override is Custom");
+            Settings.ApplyScopedExperience(true, 2);
+            Assert.IsTrue(Settings.KaamoSpecialUiFeatures, "Custom preserves the override");
+            Settings.ApplyScopedExperience(true, 1);
+            Assert.IsTrue(Settings.KaamoSpecialUiFeatures);
+            Assert.AreEqual(1, Settings.CurrentScopedExperience(true));
+            Settings.KaamoSpecialUiFeatures = false;
+            Assert.AreEqual(2, Settings.CurrentScopedExperience(true));
+            Settings.ApplyScopedExperience(false, 1);
+            Assert.IsFalse(Settings.KaamoSpecialUiFeatures, "Gameplay preset cannot change cosmetic tools");
+            Assert.IsTrue(Settings.OriginalUi);
+        }
+
     }
 }

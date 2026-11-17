@@ -3250,7 +3250,7 @@
  "kaamoVipCard": "Achat au club",
  "kaamoVipAlways": "Toujours activée",
  "kaamoVipOff": "Désactivée",
- "kaamoVipOptionHelp": "La carte VIP ajoute au stockage du Kaamo Club une barre de recherche et le tri, un onglet Vaisseaux pour vos vaisseaux entreposés et un repère Kaamo sur les vaisseaux que vous y avez déjà. Achat au club : la carte est vendue dans l'onglet Entrepôt. Toujours activée : sans carte. Désactivée : le club d'origine.",
+  "kaamoVipOptionHelp": "La carte VIP offre 20% de réduction sur les améliorations de vaisseaux chez les mécaniciens de Kaamo. Vaisseaux et équipement exclus. Acheter au club : 1 000 000 de crédits. Toujours actif : sans carte. Désactivé : aucune réduction. Les outils de stockage ont leur propre option d’interface.",
  "shopByCategory": "Trier la boutique par catégorie",
  "shopByCategoryHelp": "La boutique et l'entrepôt classent les objets par catégorie, puis par niveau technologique : l'équipement additionnel se range avec ceux de son type. Désactivé : par numéro d'objet, comme dans l'original.",
  "shopSearch": "Rechercher",
@@ -3262,10 +3262,10 @@
  "shopSortType": "Type",
  "shopSearchNone": "Aucun résultat pour « {0} ».",
  "kaamoNoShips": "Aucun vaisseau entreposé. Gardez votre ancien vaisseau quand vous en achetez un nouveau et il sera garé ici.",
- "kaamoVipText": "Devenez membre VIP du club le plus branché de l'univers. Votre carte améliore le stockage du Kaamo Club :\n\n• une barre de recherche et le tri par nom, valeur et race ou type\n• vos vaisseaux entreposés dans leur propre onglet Vaisseaux\n• un repère Kaamo sur chaque vaisseau en vente que vous avez déjà ici",
- "kaamoVipRow": "Recherche, tri et un onglet Vaisseaux pour votre club",
+  "kaamoVipText": "La carte VIP offre 20% de réduction sur les améliorations de vaisseaux chez les mécaniciens de Kaamo. Vaisseaux et équipement exclus. Recherche, tri, onglet Vaisseaux et repères des vaisseaux entreposés gratuits pour les propriétaires de Kaamo, sans carte VIP.",
+  "kaamoVipRow": "20% de réduction sur les améliorations à Kaamo",
  "kaamoVipConfirm": "Acheter la carte VIP du Kaamo Club pour {0} ?",
- "kaamoVipBought": "Bienvenue au club, VIP ! Votre stockage a maintenant une barre de recherche, le tri et un onglet Vaisseaux, et les vaisseaux que vous avez déjà ici sont signalés partout où ils sont vendus.",
+  "kaamoVipBought": "Bienvenue au club VIP ! Vous bénéficiez de 20% de réduction sur les améliorations de vaisseaux chez les mécaniciens de Kaamo. Vaisseaux et équipement exclus.",
  "shopAtKaamo": "AU KAAMO",
  "loungeShipAtKaamo": "(Vous avez déjà un {0} au Kaamo Club.)",
  "hudSearch": "RECHERCHER",
@@ -3640,5 +3640,8 @@
  "mpScriptsNotAllowed": "Cette partie utilise des mods à scripts que tu n'as pas autorisés : {0}. Active-les une fois dans Mods pour autoriser leurs scripts, puis rejoins à nouveau.",
  "mpScriptsShort": "autorise d'abord ses scripts : {0}",
  "mpModsCountScripts": "Mods ({0} activés, avec scripts)",
- "scriptNoCommand": "Aucune commande « {0} »."
+ "scriptNoCommand": "Aucune commande « {0} ».",
+  "kaamoSpecialUiFeatures": "Fonctions spéciales de l’interface Kaamo",
+  "kaamoSpecialUiFeaturesHelp": "Recherche, tri, onglet Vaisseaux et repères des vaisseaux entreposés gratuits pour les propriétaires de Kaamo, sans carte VIP.",
+  "kaamoVipUpgradePrice": "Prix normal : {0}. Réduction VIP : 20% ({1}). À payer : {2}."
 }

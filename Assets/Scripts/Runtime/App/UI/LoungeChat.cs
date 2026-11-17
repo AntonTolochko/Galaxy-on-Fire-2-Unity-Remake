@@ -329,7 +329,7 @@ namespace GoF2Remake.Data
                                                                .Replace("#C", C(ModPrice(a)));
                     int level = Session.ModLevel(a.sellMod);
                     // Remake: a stacked upgrade says which level it would be.
-                    return level > 0 ? offer + " " + string.Format(Localization.Extra("kaamoModNextLevel", "(Upgrade level {0}.)"), level + 1) : offer;
+                    return (level > 0 ? offer + " " + string.Format(Localization.Extra("kaamoModNextLevel", "(Upgrade level {0}.)"), level + 1) : offer) + VipPriceDetails(a);
                 }
                 case AgentOffer.SellShip:
                 {
@@ -380,7 +380,7 @@ namespace GoF2Remake.Data
         /// <summary>Agent::getModPricePercentage 0x1a698c: the ship's price x 20 / 30 / 40 / 20 % (mods 0..3); remake
         /// (Settings.KaamoStacking): x2 for every level already fitted, capped at int.MaxValue. A ship without a price is
         /// valued at UnpricedShipValue.</summary>
-        int ModPrice(Agent a)
+        int BaseModPrice(Agent a)
         {
             int[] pct = { 20, 30, 40, 20 };
             int ship = db.Ship(Session.ShipIndex)?.price ?? 0;
@@ -388,6 +388,16 @@ namespace GoF2Remake.Data
             if (a.sellMod < 0 || a.sellMod >= pct.Length) return a.sellPrice;
             double price = (double)ship * pct[a.sellMod] / 100 * System.Math.Pow(2, Session.ModLevel(a.sellMod));
             return price >= int.MaxValue ? int.MaxValue : (int)price;
+        }
+
+        int ModPrice(Agent a) => KaamoClub.UpgradePrice(BaseModPrice(a), station);
+
+        string VipPriceDetails(Agent a)
+        {
+            int original = BaseModPrice(a), price = ModPrice(a);
+            if (price == original) return "";
+            return "\n" + string.Format(Localization.Extra("kaamoVipUpgradePrice", "Regular price: {0}. VIP discount: 20% ({1}). You pay: {2}."),
+                C(original), C(original - price), C(price));
         }
 
         /// <summary>Remake (players' feedback, 2026-10): the Cronus (37), Khador's gift at step 77, has no price, so its upgrades
@@ -532,7 +542,7 @@ namespace GoF2Remake.Data
             {
                 AgentOffer.SellBlueprint => T(869).Replace("#P", BlueprintName(a.sellBlueprint)).Replace("#C", C(price)),
                 AgentOffer.SellSystem => T(870).Replace("#S", SystemName(a.sellSystem)).Replace("#C", C(price)),
-                AgentOffer.SellMod => T(871).Replace("#C", C(price)),
+                AgentOffer.SellMod => T(871).Replace("#C", C(price)) + VipPriceDetails(a),
                 AgentOffer.ShipDealer => T(873).Replace("#C", C(price)),
                 _ => T(868).Replace("#Q", a.sellQuantity.ToString()).Replace("#P", ItemInfo.ItemName(a.sellItem)).Replace("#C", C(price)),
             };
