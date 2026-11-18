@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "سرعة التكبير والتصغير: ×{0}",
+  "systemMapAnimationSpeedHelp": "تسرّع فتح الأنظمة وإغلاقها والدخول إلى الخريطة الكاملة والخروج منها دون تغيير وقت المحاكاة. عند ×2 و×4 تُكتم أصوات التقريب والإبعاد.",
+  "systemMapAnimationSpeed": "سرعة حركة الخريطة",
   "debugToolsEnable": "تفعيل",
   "groupShipsEconomy": "التقدم والاقتصاد",
   "groupMissions": "المهام والمحاكاة",

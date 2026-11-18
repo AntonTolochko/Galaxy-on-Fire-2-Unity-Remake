@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "Скорость зума: ×{0}",
+  "systemMapAnimationSpeedHelp": "Ускоряет открытие и закрытие систем и полной карты, не меняя время симуляции. При ×2 и ×4 звук приближения и отдаления отключён.",
+  "systemMapAnimationSpeed": "Скорость анимации карты",
   "debugToolsEnable": "Включить",
   "groupShipsEconomy": "Прогрессия и экономика",
   "groupMissions": "Миссии и симуляция",

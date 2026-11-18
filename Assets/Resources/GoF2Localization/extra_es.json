@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "Velocidad de zoom: ×{0}",
+  "systemMapAnimationSpeedHelp": "Acelera la apertura y el cierre de sistemas y del mapa completo sin cambiar el tiempo de simulación. A ×2 y ×4 se silencian los sonidos de zoom.",
+  "systemMapAnimationSpeed": "Velocidad de animación del mapa",
   "debugToolsEnable": "Activar",
   "groupShipsEconomy": "Progresión y economía",
   "groupMissions": "Misiones y simulación",

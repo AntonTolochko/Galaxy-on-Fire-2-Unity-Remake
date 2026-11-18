@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "ज़ूम इन/आउट गति: ×{0}",
+  "systemMapAnimationSpeedHelp": "सिमुलेशन का समय बदले बिना सिस्टम और पूरे मानचित्र को खोलने तथा बंद करने की गति बढ़ाता है। ×2 और ×4 पर ज़ूम की आवाज़ें बंद रहती हैं।",
+  "systemMapAnimationSpeed": "मानचित्र एनीमेशन की गति",
   "debugToolsEnable": "सक्षम करें",
   "groupShipsEconomy": "प्रगति और अर्थव्यवस्था",
   "groupMissions": "मिशन और सिमुलेशन",

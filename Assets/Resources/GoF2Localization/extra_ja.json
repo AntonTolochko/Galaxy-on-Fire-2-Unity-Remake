@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "ズーム速度：×{0}",
+  "systemMapAnimationSpeedHelp": "シミュレーション時間を変えず、星系と全体マップの開閉を速くします。×2と×4ではズーム音を再生しません。",
+  "systemMapAnimationSpeed": "マップのアニメーション速度",
   "debugToolsEnable": "有効にする",
   "groupShipsEconomy": "進行と経済",
   "groupMissions": "ミッションとシミュレーション",

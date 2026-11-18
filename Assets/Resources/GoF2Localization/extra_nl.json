@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "Zoomsnelheid: ×{0}",
+  "systemMapAnimationSpeedHelp": "Versnelt het openen en sluiten van stelsels en de volledige kaart zonder de simulatietijd te veranderen. Bij ×2 en ×4 worden de zoomgeluiden gedempt.",
+  "systemMapAnimationSpeed": "Animatiesnelheid van de kaart",
   "debugToolsEnable": "Inschakelen",
   "groupShipsEconomy": "Voortgang en economie",
   "groupMissions": "Missies en simulatie",

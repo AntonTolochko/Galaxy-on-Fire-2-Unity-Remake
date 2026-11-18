@@ -1006,6 +1006,12 @@ namespace GoF2Remake.Data
 
         public static bool HostileAutopilotFastForward { get => GetBool("hostileAutopilotFastForward", false); set => SetBool("hostileAutopilotFastForward", value); }
 
+        public static int SystemMapAnimationSpeed
+        {
+            get { int speed = Mathf.RoundToInt(Get("systemMapAnimationSpeed", 1f)); return speed == 2 || speed == 4 ? speed : 1; }
+            set => Set("systemMapAnimationSpeed", value == 2 || value == 4 ? value : 1);
+        }
+
         // PlayerPrefs reads go through a cache: game code reads some options every frame.
         static readonly Dictionary<string, float> cache = new Dictionary<string, float>();
 

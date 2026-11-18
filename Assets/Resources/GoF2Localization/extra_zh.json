@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "缩放速度：×{0}",
+  "systemMapAnimationSpeedHelp": "加快星系和完整地图的展开与收起，不改变模拟时间。×2和×4时不播放缩放音效。",
+  "systemMapAnimationSpeed": "地图动画速度",
   "debugToolsEnable": "启用",
   "groupShipsEconomy": "进度与经济",
   "groupMissions": "任务与模拟",

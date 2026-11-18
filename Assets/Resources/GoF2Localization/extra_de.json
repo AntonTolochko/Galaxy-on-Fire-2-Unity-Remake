@@ -1,4 +1,7 @@
 {
+  "mapAnimationSpeed": "Zoomtempo: ×{0}",
+  "systemMapAnimationSpeedHelp": "Beschleunigt das Öffnen und Schließen von Systemen und der Gesamtkarte, ohne die Simulationszeit zu ändern. Bei ×2 und ×4 werden die Zoomgeräusche stummgeschaltet.",
+  "systemMapAnimationSpeed": "Animationsgeschwindigkeit der Karte",
   "debugToolsEnable": "Aktivieren",
   "groupShipsEconomy": "Fortschritt und Wirtschaft",
   "groupMissions": "Missionen und Simulation",
