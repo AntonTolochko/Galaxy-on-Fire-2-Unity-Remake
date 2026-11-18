@@ -1,4 +1,6 @@
 {
+  "blueprintAutocompleteHelp": "Pozwala zapłacić kredytami za brakujące składniki. Domyślnie wyłączone. Nie obejmuje schematów zabraniających automatycznego uzupełniania.",
+  "blueprintAutocomplete": "Automatyczne uzupełnianie schematów",
   "mapAnimationSpeed": "Szybkość zoomu: ×{0}",
   "systemMapAnimationSpeedHelp": "Przyspiesza otwieranie i zamykanie układów oraz pełnej mapy bez zmiany czasu symulacji. Przy ×2 i ×4 dźwięki zbliżania i oddalania są wyciszone.",
   "systemMapAnimationSpeed": "Szybkość animacji mapy",

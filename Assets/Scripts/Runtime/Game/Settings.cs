@@ -1012,6 +1012,8 @@ namespace GoF2Remake.Data
             set => Set("systemMapAnimationSpeed", value == 2 || value == 4 ? value : 1);
         }
 
+        public static bool BlueprintAutocomplete { get => GetBool("blueprintAutocomplete", false); set => SetBool("blueprintAutocomplete", value); }
+
         // PlayerPrefs reads go through a cache: game code reads some options every frame.
         static readonly Dictionary<string, float> cache = new Dictionary<string, float>();
 

@@ -1,4 +1,6 @@
 {
+  "blueprintAutocompleteHelp": "クレジットで設計図の不足材料を補充できます。初期設定はオフです。自動補完が禁止された設計図には使えません。",
+  "blueprintAutocomplete": "設計図の自動補完",
   "mapAnimationSpeed": "ズーム速度：×{0}",
   "systemMapAnimationSpeedHelp": "シミュレーション時間を変えず、星系と全体マップの開閉を速くします。×2と×4ではズーム音を再生しません。",
   "systemMapAnimationSpeed": "マップのアニメーション速度",

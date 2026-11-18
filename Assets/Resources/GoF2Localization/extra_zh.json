@@ -1,4 +1,6 @@
 {
+  "blueprintAutocompleteHelp": "允许支付信用点补齐蓝图缺少的材料。默认关闭。禁止自动补全的蓝图仍无法使用此功能。",
+  "blueprintAutocomplete": "蓝图自动补全",
   "mapAnimationSpeed": "缩放速度：×{0}",
   "systemMapAnimationSpeedHelp": "加快星系和完整地图的展开与收起，不改变模拟时间。×2和×4时不播放缩放音效。",
   "systemMapAnimationSpeed": "地图动画速度",

@@ -1,4 +1,6 @@
 {
+  "blueprintAutocompleteHelp": "Permite pagar créditos pelos materiais que faltam. Desativado por padrão. Projetos que proíbem essa função continuam indisponíveis.",
+  "blueprintAutocomplete": "Completar projetos automaticamente",
   "mapAnimationSpeed": "Velocidade do zoom: ×{0}",
   "systemMapAnimationSpeedHelp": "Acelera a abertura e o fechamento dos sistemas e do mapa completo sem alterar o tempo da simulação. Em ×2 e ×4, os sons de zoom ficam silenciados.",
   "systemMapAnimationSpeed": "Velocidade da animação do mapa",

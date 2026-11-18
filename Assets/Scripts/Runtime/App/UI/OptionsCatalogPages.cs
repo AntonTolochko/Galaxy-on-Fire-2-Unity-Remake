@@ -476,6 +476,12 @@ namespace GoF2Remake.UI
 
         static void AddGameplay(List<OptionDef> list)
         {
+            var autocomplete = Toggle("blueprintAutocomplete", OptionPage.Gameplay,
+                () => X("blueprintAutocomplete", "Blueprint autocomplete"),
+                () => Settings.BlueprintAutocomplete, v => Settings.BlueprintAutocomplete = v);
+            autocomplete.description = () => X("blueprintAutocompleteHelp",
+                "Allows paying credits to supply a blueprint's missing ingredients. Off by default. Blueprints that forbid autocomplete remain unavailable.");
+            list.Add(autocomplete);
             // Remake: free flight after EVERSPACE 2 (Settings.FlightStyle, FlightModel.StepFree); it switches the key layout too.
             // A toggle: off = the original's flight and key layout, untouched.
             var freeFlight = Toggle("flightStyle", OptionPage.Gameplay, () => X("flightStyleFree", "Free flight (EVERSPACE 2 style)"),
