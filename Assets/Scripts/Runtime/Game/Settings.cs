@@ -1004,6 +1004,8 @@ namespace GoF2Remake.Data
             Modding.ModGameOptions.ResetSettings();   // the mods' gameplay settings (gameoptions.json "setting")
         }
 
+        public static bool HostileAutopilotFastForward { get => GetBool("hostileAutopilotFastForward", false); set => SetBool("hostileAutopilotFastForward", value); }
+
         // PlayerPrefs reads go through a cache: game code reads some options every frame.
         static readonly Dictionary<string, float> cache = new Dictionary<string, float>();
 
