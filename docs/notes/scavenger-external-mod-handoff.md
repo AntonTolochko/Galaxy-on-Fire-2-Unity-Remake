@@ -30,6 +30,6 @@ small general-purpose hooks separately if needed. Do not copy the prototype's sa
 menu/save-group implementation blindly into a future release. Reassess compatibility with current saves,
 import/export, New Game+, active mods and multiplayer authority. Multiplayer is outside the prototype's scope.
 
-Keep this work separate from the settings/preset and Kaamo VIP PRs. No gameplay implementation, save migration,
+No gameplay implementation, save migration,
 or external-mod packaging is added by this archival note. Validation claims in the original PR describe that
 historical prototype, not a future mod or compatibility with today's upstream.
