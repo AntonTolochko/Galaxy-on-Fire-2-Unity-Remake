@@ -132,11 +132,13 @@ namespace GoF2Remake.UI
                     case 19: case 26: case 36: case 37: case 43: rows.Add((LoadingTime, $"{v} ms")); break;
                     case 21: rows.Add((T(140), $"{v} %")); break;
                     case 54 when it.categoryId == 37:
+                        rows.Add((T(157), $"{v} %"));
                         // RepairBeam heals 30 hull points per second per target at 100% efficiency.
                         rows.Add((Localization.Extra("statHullRepair", "Hull repair per second"),
                             (30f * v / 100f).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)));
                         break;
                     case 54 when it.categoryId == 41:
+                        rows.Add((T(157), $"{v} %"));
                         // Each active target supplies the same shield and takes the same damage per second.
                         string drainRate = (v / 10f).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
                         rows.Add((Localization.Extra("statShieldPerSecond", "Shield per second"), drainRate));
