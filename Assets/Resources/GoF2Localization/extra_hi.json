@@ -1,4 +1,5 @@
 {
+  "statCalculatedHelp": "इस मान की गणना मूल मापदंडों से होती है। मॉड संपादक में इसे अलग से सेट नहीं किया जा सकता।",
   "kaamoVipUpgradePrice": "सामान्य मूल्य: {0}। VIP छूट: 20% ({1})। देय राशि: {2}।",
   "kaamoSpecialUiFeaturesHelp": "Kaamo मालिकों के लिए मुफ़्त खोज, छँटाई, जहाज़ टैब और रखे गए जहाज़ों के संकेत। VIP कार्ड से स्वतंत्र।",
   "kaamoSpecialUiFeatures": "Kaamo के विशेष UI फ़ीचर",

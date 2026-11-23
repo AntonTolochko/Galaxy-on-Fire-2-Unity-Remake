@@ -1,4 +1,5 @@
 {
+  "statCalculatedHelp": "この値は基本パラメーターから計算されるため、Mod エディターで個別に設定することはできません。",
   "kaamoVipUpgradePrice": "通常価格：{0}。VIP 割引：20%（{1}）。支払額：{2}。",
   "kaamoSpecialUiFeaturesHelp": "Kaamo 所有者は検索、並べ替え、船タブ、保管済みの船の表示を無料で利用できます。VIP カードは不要です。",
   "kaamoSpecialUiFeatures": "Kaamo 特別UI機能",

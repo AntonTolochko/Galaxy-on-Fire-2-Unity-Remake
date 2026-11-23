@@ -75,9 +75,16 @@ namespace GoF2Remake.UI
         static string LoadingTime => Localization.Extra("statLoadingTime", "Loading time");
 
         /// <summary>ListItemWindow::set, items: label (DAT_0025875c) and value + unit (LISTITEMWINDOW_UNITS) per attribute.</summary>
-        public static List<(string label, string value)> ItemStats(ItemData it)
+        public static List<(string label, string value)> ItemStats(ItemData it) => ItemStats(it, null);
+
+        static List<(string label, string value)> ItemStats(ItemData it, HashSet<int> calculated)
         {
             var rows = new List<(string, string)>();
+            void Derived((string label, string value) stat)
+            {
+                calculated?.Add(rows.Count);
+                rows.Add(stat);
+            }
             string T(int id) => Localization.Get(id);
             string YesNo(int v) => T(v != 0 ? 134 : 135);
             string Signed(int v) => v < 0 ? v.ToString() : "+" + v;   // a weapon mod's factor: +20 or -10
@@ -97,7 +104,7 @@ namespace GoF2Remake.UI
                         if ((it.TypeId == 0 || it.TypeId == 2 || it.categoryId == 39) && v > 0)
                         {
                             int dmg = it.HasAttr(9) ? it.Attr(9) : it.Attr(10);
-                            rows.Add((T(188), OriginalDecimals(dmg / (float)v * 1000f)));
+                            Derived((T(188), OriginalDecimals(dmg / (float)v * 1000f)));
                         }
                         break;
                     case 12:
@@ -108,7 +115,7 @@ namespace GoF2Remake.UI
                             // a remainder of exactly 50 goes up instead (r + r % 100 when that is a round hundred): 1250 reads 1300.
                             int range = (int)(v / 3600f * (it.Attr(13) * 250));
                             int shown = range % 100 == 50 ? range + 50 : range - range % 100;
-                            rows.Add((T(151), $"{shown} m"));
+                            Derived((T(151), $"{shown} m"));
                         }
                         break;
                     case 13: rows.Add((T(156), $"{v * 250} km/h")); break;
@@ -127,22 +134,22 @@ namespace GoF2Remake.UI
                         // Remake (a player's suggestion): a shield's full recharge time (the original's "speed") and its rate, the
                         // shield points per second (Hitpoints.RegenerateShield: max / (attr 19 / 100) per 100 ms), like weapons' DPS.
                         rows.Add((Localization.Extra("statFullRecharge", "Full recharge"), $"{v} ms"));
-                        rows.Add((Localization.Extra("statShieldPerSecond", "Shield per second"), (it.Attr(18) * 1000f / v).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)));
+                        Derived((Localization.Extra("statShieldPerSecond", "Shield per second"), (it.Attr(18) * 1000f / v).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)));
                         break;
                     case 19: case 26: case 36: case 37: case 43: rows.Add((LoadingTime, $"{v} ms")); break;
                     case 21: rows.Add((T(140), $"{v} %")); break;
                     case 54 when it.categoryId == 37:
                         rows.Add((T(157), $"{v} %"));
                         // RepairBeam heals 30 hull points per second per target at 100% efficiency.
-                        rows.Add((Localization.Extra("statHullRepair", "Hull repair per second"),
+                        Derived((Localization.Extra("statHullRepair", "Hull repair per second"),
                             (30f * v / 100f).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)));
                         break;
                     case 54 when it.categoryId == 41:
                         rows.Add((T(157), $"{v} %"));
                         // Each active target supplies the same shield and takes the same damage per second.
                         string drainRate = (v / 10f).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
-                        rows.Add((Localization.Extra("statShieldPerSecond", "Shield per second"), drainRate));
-                        rows.Add((T(188), drainRate));
+                        Derived((Localization.Extra("statShieldPerSecond", "Shield per second"), drainRate));
+                        Derived((T(188), drainRate));
                         break;
                     case 22: case 25: case 28: case 46: case 54: case 56: rows.Add((T(157), $"{v} %")); break;
                     case 24: case 29: rows.Add((T(141), $"{v} ms")); break;
@@ -216,8 +223,8 @@ namespace GoF2Remake.UI
             {
                 Flight.PlayerHealth.RepairRates(it, out float hullMs, out float armorMs);
                 var inv = System.Globalization.CultureInfo.InvariantCulture;
-                rows.Add((Localization.Extra("statHullRepair", "Hull repair per second"), (1000f / hullMs).ToString("0.00", inv)));
-                rows.Add((Localization.Extra("statArmorRepair", "Armor repair per second"), (2000f / armorMs).ToString("0.00", inv)));
+                Derived((Localization.Extra("statHullRepair", "Hull repair per second"), (1000f / hullMs).ToString("0.00", inv)));
+                Derived((Localization.Extra("statArmorRepair", "Armor repair per second"), (2000f / armorMs).ToString("0.00", inv)));
             }
             int defense = it.Attr(Flight.PointDefense.Attribute);
             if (defense > 0)
@@ -234,9 +241,17 @@ namespace GoF2Remake.UI
                     float percent = ((1f + it.Attr(40) / 100f) / reloadFactor - 1f) * 100f;
                     change = (percent >= 0f ? "+" : "") + percent.ToString("0.#", System.Globalization.CultureInfo.InvariantCulture) + " %";
                 }
-                rows.Add((T(188), change));
+                Derived((T(188), change));
             }
             return rows;
+        }
+
+        public static IEnumerable<(string label, string value, bool derived)> ItemDetailRows(ItemData item)
+        {
+            var calculated = new HashSet<int>();
+            var rows = ItemStats(item, calculated);
+            for (int i = 0; i < rows.Count; i++)
+                yield return (rows[i].label, rows[i].value, calculated.Contains(i));
         }
 
         /// <summary>The original's decimals (ListItemWindow::set 0x159dcc, the DPS row; StatusWindow::draw 0x1840e2, the fire

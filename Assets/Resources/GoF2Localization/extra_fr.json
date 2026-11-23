@@ -1,4 +1,5 @@
 {
+  "statCalculatedHelp": "Cette valeur est calculée à partir des paramètres de base et ne peut pas être réglée séparément dans l’éditeur de mods.",
   "kaamoVipUpgradePrice": "Prix normal : {0}. Réduction VIP : 20% ({1}). À payer : {2}.",
   "kaamoSpecialUiFeaturesHelp": "Recherche, tri, onglet Vaisseaux et repères des vaisseaux entreposés gratuits pour les propriétaires de Kaamo, sans carte VIP.",
   "kaamoSpecialUiFeatures": "Fonctions spéciales de l’interface Kaamo",

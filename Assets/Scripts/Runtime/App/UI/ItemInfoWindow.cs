@@ -145,7 +145,7 @@ namespace GoF2Remake.UI
             s.paddingBottom = p.w;
         }
 
-        void Row(string label, string value, int compare = 2)
+        void Row(string label, string value, int compare = 2, bool derived = false)
         {
             var r = new VisualElement();
             r.AddToClassList("info-row");
@@ -154,6 +154,7 @@ namespace GoF2Remake.UI
             var v = new Label(value) { pickingMode = PickingMode.Ignore };
             v.AddToClassList("info-row-value");
             v.AddToClassList("gof-semibold");
+            if (derived) CalculatedStatMarker.AddTo(r);
             r.Add(l);
             r.Add(v);
             if (compare != 2)
@@ -178,7 +179,7 @@ namespace GoF2Remake.UI
             icon.style.backgroundImage = new StyleBackground(ItemInfo.ItemIcon(item));
             nameLabel.text = ItemInfo.TaggedItemName(item);
             subLabel.text = $"{ItemInfo.Category(it)}  ·  {T(133)} {it.techLevel}";
-            foreach (var (label, value) in ItemInfo.ItemStats(it)) Row(label, value);
+            foreach (var (label, value, derived) in ItemInfo.ItemDetailRows(it)) Row(label, value, derived: derived);
             if (showPrice && price > 0) Row(T(132), ItemInfo.Credits(price));
             text.text = ItemInfo.ItemText(db, it, currentSystem);
         }
@@ -240,6 +241,35 @@ namespace GoF2Remake.UI
             if (kb != null) turn += (kb.dKey.isPressed || kb.rightArrowKey.isPressed ? 1f : 0f) - (kb.aKey.isPressed || kb.leftArrowKey.isPressed ? 1f : 0f);
             if (pad != null) turn += pad.rightStick.ReadValue().x + pad.leftStick.ReadValue().x;
             preview.Turn(-Mathf.Clamp(turn, -1f, 1f) * 8f * frames);   // like dragging that way
+        }
+    }
+
+    internal static class CalculatedStatMarker
+    {
+        public static void AddTo(VisualElement row)
+        {
+            string message = Localization.Extra("statCalculatedHelp",
+                "Calculated from the base parameters. This value cannot be edited separately in the Mod Builder.");
+            var note = new Label(message);
+            note.style.whiteSpace = WhiteSpace.Normal;
+            var marker = new Button { text = "!", tooltip = message };
+            const int size = 20;
+            var style = marker.style;
+            style.width = style.height = size;
+            style.minWidth = style.minHeight = size;
+            style.flexShrink = 0;
+            style.alignSelf = Align.Center;
+            style.paddingLeft = style.paddingRight = style.paddingTop = style.paddingBottom = 0;
+            style.marginRight = 5;
+            style.fontSize = 14;
+            style.borderTopLeftRadius = style.borderTopRightRadius = size / 2;
+            style.borderBottomLeftRadius = style.borderBottomRightRadius = size / 2;
+            marker.clicked += () =>
+            {
+                if (note.parent != null) note.RemoveFromHierarchy();
+                else if (row.parent != null) row.parent.Insert(row.parent.IndexOf(row) + 1, note);
+            };
+            row.Add(marker);
         }
     }
 }

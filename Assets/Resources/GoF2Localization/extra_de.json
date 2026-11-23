@@ -1,4 +1,5 @@
 {
+  "statCalculatedHelp": "Dieser Wert wird aus den Basiswerten berechnet und kann im Mod-Editor nicht separat eingestellt werden.",
   "kaamoVipUpgradePrice": "Normalpreis: {0}. VIP-Rabatt: 20% ({1}). Endpreis: {2}.",
   "kaamoSpecialUiFeaturesHelp": "Kostenlose Suche, Sortierung, Schiffsreiter und Markierungen eingelagerter Schiffe für Kaamo-Besitzer. Unabhängig von der VIP-Karte.",
   "kaamoSpecialUiFeatures": "Besondere Kaamo-UI-Funktionen",

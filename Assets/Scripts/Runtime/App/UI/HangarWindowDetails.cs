@@ -137,7 +137,7 @@ namespace GoF2Remake.UI
                 detailIcon.style.backgroundImage = new StyleBackground(ItemInfo.ItemIcon(item));
                 detailName.text = ItemInfo.TaggedItemName(item);
                 detailSub.text = $"{ItemInfo.Category(it)}  ·  {T(133)} {it.techLevel}";
-                foreach (var (label, value) in ItemInfo.ItemStats(it)) AddStat(label, value);
+                foreach (var (label, value, derived) in ItemInfo.ItemDetailRows(it)) AddStat(label, value, derived: derived);
                 detailText.text = ItemInfo.ItemText(db, it, hangar.SystemIndex);
 
                 if (selected.kind == RowKind.ShopItem)
@@ -250,7 +250,7 @@ namespace GoF2Remake.UI
             else
             {
                 detailSub.text = $"{ItemInfo.Category(it)}  ·  {T(133)} {it.techLevel}";
-                foreach (var (label, value) in ItemInfo.ItemStats(it)) AddStat(label, value);
+                foreach (var (label, value, derived) in ItemInfo.ItemDetailRows(it)) AddStat(label, value, derived: derived);
                 detailText.text = ItemInfo.ItemText(db, it, hangar.SystemIndex);
             }
             switch (selected.kind)
@@ -535,7 +535,7 @@ namespace GoF2Remake.UI
             actionButton.EnableInClassList("detail-action--disabled", !enabled);
         }
         /// <summary>A stat row; 'compare' -1 / 1 / 0 adds the worse / better / equal arrow (ItemInfo.ShipStatsCompared), 2 none.</summary>
-        void AddStat(string label, string value, int compare = 2)
+        void AddStat(string label, string value, int compare = 2, bool derived = false)
         {
             var row = new VisualElement { pickingMode = PickingMode.Ignore };
             row.AddToClassList("stat-row");
@@ -544,6 +544,7 @@ namespace GoF2Remake.UI
             var v = new Label(value) { pickingMode = PickingMode.Ignore };
             v.AddToClassList("stat-value");
             v.AddToClassList("gof-semibold");
+            if (derived) CalculatedStatMarker.AddTo(row);
             row.Add(l);
             if (compare != 2)
             {

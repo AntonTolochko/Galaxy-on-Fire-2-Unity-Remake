@@ -1,4 +1,5 @@
 {
+  "statCalculatedHelp": "此数值由基础参数计算得出，无法在模组编辑器中单独设置。",
   "kaamoVipUpgradePrice": "原价：{0}。VIP 优惠：20%（{1}）。实付：{2}。",
   "kaamoSpecialUiFeaturesHelp": "Kaamo 所有者可免费使用搜索、排序、飞船标签页及已存放飞船标记，无需 VIP 卡。",
   "kaamoSpecialUiFeatures": "Kaamo 特殊界面功能",

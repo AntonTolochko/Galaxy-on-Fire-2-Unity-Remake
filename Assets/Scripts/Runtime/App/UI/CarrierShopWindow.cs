@@ -402,18 +402,19 @@ namespace GoF2Remake.UI
             tradePrice.EnableInClassList("trade-price--expensive", o.unitPrice > Session.Credits);
             bool canBuy = o.room > 0 && o.unitPrice <= Session.Credits;
             buyArrow.EnableInClassList("trade-arrow--disabled", !canBuy);
-            foreach (var (label, value) in ItemInfo.ItemStats(it)) AddStat(label, value);
+            foreach (var (label, value, derived) in ItemInfo.ItemDetailRows(it)) AddStat(label, value, derived: derived);
             detailText.text = ItemInfo.ItemText(db, it, Shop.SystemOf(db, Session.StationIndex));
             detailScroll.scrollOffset = Vector2.zero;
         }
 
-        void AddStat(string label, string value)
+        void AddStat(string label, string value, bool derived = false)
         {
             var row = El("stat-row");
             var l = Lbl("stat-label");
             l.text = label;
             var v = Lbl("stat-value", true);
             v.text = value;
+            if (derived) CalculatedStatMarker.AddTo(row);
             row.Add(l);
             row.Add(v);
             detailStats.Add(row);

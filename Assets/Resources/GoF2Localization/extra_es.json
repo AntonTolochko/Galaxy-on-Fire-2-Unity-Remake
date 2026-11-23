@@ -1,4 +1,5 @@
 {
+  "statCalculatedHelp": "Este valor se calcula a partir de los parámetros básicos y no se puede ajustar por separado en el editor de mods.",
   "kaamoVipUpgradePrice": "Precio normal: {0}. Descuento VIP: 20% ({1}). Total: {2}.",
   "kaamoSpecialUiFeaturesHelp": "Búsqueda, ordenación, pestaña de naves e indicadores de naves almacenadas gratis para propietarios de Kaamo, sin tarjeta VIP.",
   "kaamoSpecialUiFeatures": "Funciones especiales de la interfaz de Kaamo",
