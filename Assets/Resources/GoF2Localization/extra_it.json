@@ -1,5 +1,5 @@
 {
-  "statCalculatedHelp": "Questo valore è calcolato dai parametri di base e non può essere impostato separatamente nell’editor di mod.",
+  "statCalculatedHelp": "Questo valore è calcolato dai parametri di base.",
   "kaamoVipUpgradePrice": "Prezzo normale: {0}. Sconto VIP: 20% ({1}). Totale: {2}.",
   "kaamoSpecialUiFeaturesHelp": "Ricerca, ordinamento, scheda Navi e indicatori delle navi depositate gratuiti per i proprietari di Kaamo, senza tessera VIP.",
   "kaamoSpecialUiFeatures": "Funzioni speciali dell’interfaccia Kaamo",

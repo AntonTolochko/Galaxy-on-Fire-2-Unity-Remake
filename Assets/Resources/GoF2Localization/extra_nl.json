@@ -1,5 +1,5 @@
 {
-  "statCalculatedHelp": "Deze waarde wordt berekend uit de basiswaarden en kan niet apart worden ingesteld in de mod-editor.",
+  "statCalculatedHelp": "Deze waarde wordt berekend uit de basiswaarden.",
   "kaamoVipUpgradePrice": "Normale prijs: {0}. VIP-korting: 20% ({1}). Te betalen: {2}.",
   "kaamoSpecialUiFeaturesHelp": "Gratis zoeken, sorteren, een tabblad Schepen en markeringen van gestalde schepen voor Kaamo-eigenaren, zonder VIP-kaart.",
   "kaamoSpecialUiFeatures": "Speciale Kaamo-interfacefuncties",

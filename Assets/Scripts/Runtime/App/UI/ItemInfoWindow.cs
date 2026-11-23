@@ -249,7 +249,7 @@ namespace GoF2Remake.UI
         public static void AddTo(VisualElement row)
         {
             string message = Localization.Extra("statCalculatedHelp",
-                "Calculated from the base parameters. This value cannot be edited separately in the Mod Builder.");
+                "Calculated from the base parameters.");
             var note = new Label(message);
             note.style.whiteSpace = WhiteSpace.Normal;
             var marker = new Button { text = "!", tooltip = message };

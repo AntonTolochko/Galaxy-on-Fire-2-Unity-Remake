@@ -1,5 +1,5 @@
 {
-  "statCalculatedHelp": "Ta wartość jest obliczana na podstawie parametrów bazowych i nie można jej ustawić osobno w edytorze modów.",
+  "statCalculatedHelp": "Ta wartość jest obliczana na podstawie parametrów bazowych.",
   "kaamoVipUpgradePrice": "Cena zwykła: {0}. Zniżka VIP: 20% ({1}). Do zapłaty: {2}.",
   "kaamoSpecialUiFeaturesHelp": "Bezpłatne wyszukiwanie, sortowanie, zakładka Statki i oznaczenia przechowywanych statków dla właścicieli Kaamo, bez karty VIP.",
   "kaamoSpecialUiFeatures": "Specjalne funkcje interfejsu Kaamo",
